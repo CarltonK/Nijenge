@@ -2,9 +2,28 @@
 /*
 Primary file for API
 */
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 // Dependencies
-const http = require("http");
+const http = __importStar(require("http"));
 const url_1 = require("url");
 const string_decoder_1 = require("string_decoder");
 const config_1 = require("./core/config");
@@ -15,7 +34,7 @@ const httpServer = http.createServer(function (req, res) {
 });
 const port = typeof (config_1.exportEnvironment.httpPort) !== 'undefined' ? config_1.exportEnvironment.httpPort : 3000;
 httpServer.listen(port, function () {
-    console.log(`The server is listening on port ${port} in the ${config_1.exportEnvironment.envName} environment`);
+    console.log(`The server is listening on port ${port} in the ${config_1.exportEnvironment.envName} environment.`);
 });
 const umbrellaServer = function (req, res) {
     // Get the URL and parse it

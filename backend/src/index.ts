@@ -57,8 +57,6 @@ const umbrellaServer = function(req: any, res: any) {
             payload: buffer
         }
 
-        // console.log(data)
-
         // Route the request to the handler specified in the router
         chosenHandler(data, function(statusCode: number, payload: (undefined | object)) {
             // Use the status code called back by handler or default to 200
@@ -66,7 +64,7 @@ const umbrellaServer = function(req: any, res: any) {
 
             // Use the payload called back by handler or default to empty object
             payload = typeof(payload) === 'object' ? payload : {}
-            
+
             // Convert the payload to a string
             const payloadString = JSON.stringify(payload)
 
