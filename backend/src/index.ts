@@ -16,7 +16,7 @@ const httpServer = http.createServer(function(req: http.IncomingMessage, res: ht
 
 const port: number = typeof(exportEnvironment.httpPort) !== 'undefined' ? exportEnvironment.httpPort : 3000
 httpServer.listen(port, function() {
-    console.log(`The server is listening on port ${port} in the ${exportEnvironment.envName} environment`)
+    console.log(`The server is listening on port ${port} in the ${exportEnvironment.envName} environment.`)
 })
 
 const umbrellaServer = function(req: any, res: any) {
